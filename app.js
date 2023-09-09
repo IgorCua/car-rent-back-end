@@ -33,8 +33,10 @@ app.use((err, _, res, __) => {
 app.use((err, _, res, __) => {
     console.log(err);
     const {status = '500', message = 'Internal error'} = err;
-    
+
     res.status(status).json({
         message
     });
 })
+
+module.exports = app;
