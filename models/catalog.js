@@ -49,4 +49,12 @@ const catalogSchema = new Schema ({
     mileage:{
         type: Number
     }
+},{
+    versionKey: false,
 });
+
+const Catalog = model('catalog', catalogSchema);
+
+catalogSchema.post('save', handleMongooseError);
+
+module.exports = Catalog;
