@@ -21,13 +21,7 @@ app.use((err, _, res, __) => {
         code: 404,
         // message:'error message',
         data: 'Not found'
-    })
-    // res.status(404).json({
-    //     status: 'error',
-    //     code: 404,
-    //     message: 'Use api on routes: /api/contacts for contacts and /users for user request operations',
-    //     data: 'Not found'
-    // });
+    });
 });
 
 app.use((err, _, res, __) => {
