@@ -1,8 +1,9 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
-
 require('dotenv').config();
+
+const catalogRouter = require('./routes/api/catalog-routes');
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-
+app.use('/catalog/', catalogRouter);
 
 app.use((err, _, res, __) => {
     res.status(404).json({
