@@ -35,10 +35,10 @@ const catalogSchema = new Schema ({
         type: Array
     },
     rentalPrice:{
-        type: Array
+        type: Number
     },
     rentalCompany:{
-        type: Array
+        type: String
     },
     adress:{
         type: String
