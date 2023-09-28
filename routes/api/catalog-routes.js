@@ -8,7 +8,6 @@ const {
 const router = express.Router();
 
 router.get('/', getCarsList);
-
-// router.get('/')
+router.get('/filtered', getFilteredList);
 
 module.exports = router;
