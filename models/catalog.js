@@ -57,4 +57,29 @@ const Catalog = model('catalog', catalogSchema);
 
 catalogSchema.post('save', handleMongooseError);
 
+Catalog.aggregate([
+    {
+      $addFields: {
+        regex: {
+          $regexFind: {
+            input: "$mileage",
+            regex: "^\\d+"
+          }
+        }
+      }
+    },
+    {
+      $set: {
+        experience_num: {
+          $convert: {
+            input: "$regex.match",
+            to: "int"
+          }
+        }
+      }
+    },
+    // {$match: {experience_num: {"$gte": 1, "$lte": 3}}},
+    // {$project: {experience: 1}}
+  ])
+
 module.exports = Catalog;
