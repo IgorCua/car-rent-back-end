@@ -1,13 +1,16 @@
 const express = require('express');
+const filterUpdateSchema = require('../../schemas/filter');
 
 const {
     getCarsList,
     getFilteredList
 } = require('../../controllers/catalog-controller');
+const { required } = require('../../schemas/filter');
+const validateBody = require('../../utils/validateBody');
 
 const router = express.Router();
 
 router.get('/', getCarsList);
-router.get('/filtered', getFilteredList);
+router.get('/filtered', validateBody(filterUpdateSchema), getFilteredList);
 
 module.exports = router;
