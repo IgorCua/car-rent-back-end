@@ -22,6 +22,10 @@ const getFilteredList = async (req, res) => {
     res.json(catalogList);
 }
 
+const getFavoritesList = async (req, res) => {
+    
+}
+
 module.exports = {
     getCarsList: ctrlWrapper(getCarslist),
     getFilteredList: ctrlWrapper(getFilteredList)
