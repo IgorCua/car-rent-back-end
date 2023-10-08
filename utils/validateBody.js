@@ -13,9 +13,9 @@ const validateBody = schema => {
         });
 
         if(error) {
-            console.log("ERROR", error.message);
+            // console.log("ERROR", error.message);
             // console.log("ERROR _ORIGINAL", error._original);
-            throw httpError(400, 'wrong data');
+            throw httpError(400, error.message);
         }
         // console.log(req.query);
 
