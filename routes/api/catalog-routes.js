@@ -5,7 +5,6 @@ const {
     getCarsList,
     getFilteredList
 } = require('../../controllers/catalog-controller');
-const { required } = require('../../schemas/filter');
 const validateBody = require('../../utils/validateBody');
 
 const router = express.Router();
