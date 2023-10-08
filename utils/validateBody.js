@@ -2,23 +2,8 @@ const { httpError } = require('../helpers/index');
 
 const validateBody = schema => {
     const fn = (req, _, next) => {
-        const {
-            make,
-            rentalPrice,
-            mileageFrom,
-            mileageTo
-        } = req.query;
-        const obj = {
-            make: make,
-            rentalPrice: (isNaN(+rentalPrice)) ? NaN : rentalPrice,
-            mileageFrom: (isNaN(+mileageFrom)) ? NaN : mileageFrom,
-            mileageTo: (isNaN(+mileageTo)) ? NaN : mileageTo
-        }
 
-        console.log("OBJ", obj);
-        console.log("REQ BODY", req.query);
-
-        const {error} = schema.validate(obj, {
+        const {error} = schema.validate(req.query, {
             abortEarly: false,
             errors: {
                 warp: {

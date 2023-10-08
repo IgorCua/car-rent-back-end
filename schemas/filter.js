@@ -1,10 +1,10 @@
 const Joi = require('joi');
 
 const filterUpdateSchema = Joi.object({
-    make: Joi.string().optional(),
-    rentalPrice: Joi.number().optional(),
-    mileageFrom: Joi.number().optional(),
-    mileageTo: Joi.number().optional()
-})
+    make: Joi.string().allow(null, '').optional(),
+    rentalPrice: Joi.number().allow(null, '').optional(),
+    mileageFrom: Joi.number().allow(null, '').optional(),
+    mileageTo: Joi.number().allow(null, '').optional()
+});
 
 module.exports = filterUpdateSchema;
