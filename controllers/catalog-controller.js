@@ -23,10 +23,20 @@ const getFilteredList = async (req, res) => {
 }
 
 const getFavoritesList = async (req, res) => {
-    
+    const favoriteList = await Catalog.find({favorite: true});
+    res.json(favoriteList);
+}
+
+const updateFavorite = async (req, res) => {
+    const response = await Catalog.changeOne(
+        {_id: ''},
+        {favorite: ''}
+    );
 }
 
 module.exports = {
     getCarsList: ctrlWrapper(getCarslist),
-    getFilteredList: ctrlWrapper(getFilteredList)
+    getFilteredList: ctrlWrapper(getFilteredList),
+    getFavoritesList: ctrlWrapper(getFavoritesList),
+    updateFavorite: ctrlWrapper(updateFavorite)
 }
