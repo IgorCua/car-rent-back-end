@@ -5,7 +5,7 @@ const filterUpdateSchema = Joi.object({
     rentalPrice: Joi.number().allow(null, '').optional().messages({'number.base': `"rentalPrice" should be a 'number'`}),
     mileageFrom: Joi.number().allow(null, '').optional().messages({'number.base': `"mileageFrom" should be a 'number'`}),
     mileageTo: Joi.number().allow(null, '').optional().messages({'number.base': `"mileageTo" should be a 'number'`})
-})
+});
 // .messages({'any.base': `{#label}`});
 
 module.exports = filterUpdateSchema;
