@@ -1,9 +1,9 @@
 const handleMongooseError = require("./handleMongooseError");
-const httpError = require("./httpError");
+const HttpError = require("./HttpError");
 const filterHandler = require("./handleFilter");
 
 module.exports = {
     handleMongooseError,
-    httpError,
+    HttpError,
     filterHandler
 }

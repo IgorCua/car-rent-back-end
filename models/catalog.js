@@ -4,9 +4,6 @@ const { handleMongooseError } = require("../helpers");
 const { Schema, model } = require('mongoose');
 
 const catalogSchema = new Schema ({
-    _id: {
-        type: String
-    },
     year:{
         type: Number
     },
@@ -51,6 +48,10 @@ const catalogSchema = new Schema ({
     },
     mileage:{
         type: Number
+    },
+    favorite:{
+        type: Boolean,
+        default: false
     }
 },{
     versionKey: false,
