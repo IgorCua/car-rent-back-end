@@ -11,7 +11,7 @@ const getCarslist = async (req, res) => {
     const skip = (page - 1) * limit;
     // console.log(req.query);
 
-    const catalogList = await Catalog.find('', '', {skip, limit});
+    const catalogList = await Catalog.find({}, '', {skip, limit});
     res.json(catalogList);
     // console.log(catalogList);
 }
