@@ -25,8 +25,7 @@ const filterHandler = (obj) => {
         };
     }
     
-    // console.log("resultObj", resultObj);
-    return resultObj;
+    return resultObj; 
 };
 
 module.exports = filterHandler;
